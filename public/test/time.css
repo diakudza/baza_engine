@@ -1,0 +1,36 @@
+.main{
+	background: #fff;
+	border: 1px solid black;
+	flex-direction: column;
+	display: flex;
+}
+.stanok{
+	background-color: gray;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	border: 1px solid black;
+}
+.info{
+	width: 200px;
+	border: 1px solid black;
+}
+
+.line{
+	height: 20px;
+}
+.green{
+	background-color: green;
+	border: 1px solid black;
+}
+.yellow{
+	background-color: yellow;
+	border: 1px solid black;
+}
+.black{
+	background-color: black;
+}
+.red{
+	background-color: red;
+	border: 1px solid black;
+}

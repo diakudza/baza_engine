@@ -1,0 +1,77 @@
+	
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Refresh" content="5">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+</head><title>Статус</title><body>
+
+<h1>21:48:01  Вторая смена </h1><div class="table">
+		<div class="obed" style="display:none;">ОБЕД</div>
+					
+					<div class="item" style="background-color:black; color:white; display:flex; ">
+						<div class="s_name">STAR 16-1</div>
+						<div class="operator"></div>
+						<div class="prostoi"></div>
+						<div class="task"><br>РЕМОНТ</div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">STAR 16-2</div>
+						<div class="operator">Галкин А.Н.</div>
+						<div class="prostoi"><br>Работает<br>01 ч 03 мин</div>
+						<div class="task"></div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">STAR 32-1</div>
+						<div class="operator">Галкин А.Н.</div>
+						<div class="prostoi"><br>Работает<br>01 ч 04 мин</div>
+						<div class="task"></div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">STAR 10</div>
+						<div class="operator">Савула М.В.</div>
+						<div class="prostoi"><br>Работает<br>00 мин</div>
+						<div class="task"></div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">STAR 20</div>
+						<div class="operator">Дьяков М.А.</div>
+						<div class="prostoi"><br>Работает<br>01 ч 23 мин</div>
+						<div class="task"></div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">NEXT 12</div>
+						<div class="operator">Дьяков М.А.</div>
+						<div class="prostoi"><br>Работает<br>02 ч 02 мин</div>
+						<div class="task"></div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">STAR 32-2</div>
+						<div class="operator">Савула М.В.</div>
+						<div class="prostoi"><br>Работает<br>08 мин</div>
+						<div class="task"></div>
+					</div>
+					
+					<div class="item" style="background-color:green; color:white; display:flex; ">
+						<div class="s_name">NEXT 20</div>
+						<div class="operator">Дьяков М.А.</div>
+						<div class="prostoi"><br>Работает<br>03 ч 39 мин</div>
+						<div class="task"></div>
+					</div></div> 
+<div class="fixed-bottom">
+	
+
+	<div id="footer">
+	<h6><w>&copy; М.А. Дьяков, 2021</h6>
+	</div>	</div>
+	
+</body>
+</html>
