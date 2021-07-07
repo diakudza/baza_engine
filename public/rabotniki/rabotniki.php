@@ -1,6 +1,6 @@
 <?php
 
-//include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 ?>
 
 <table border="1" align="center" cellspacing="" class="window forma">

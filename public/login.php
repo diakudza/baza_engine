@@ -10,8 +10,8 @@
 <body class="zadni">
 <div class="window login center">
 
-  <?PHP
-  include "../config/connect.php";
+ <?PHP
+ include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $data = mysqli_fetch_assoc(mysqli_query($db,"SELECT pass FROM rabotniki WHERE login='".($_POST['login'])."' LIMIT 1"));
 $fio  = mysqli_fetch_assoc(mysqli_query($db,"SELECT fio,id_rabotnika FROM rabotniki WHERE login='".($_POST['login'])."' LIMIT 1"));
 $ad  = mysqli_fetch_assoc(mysqli_query($db,"SELECT dop3 FROM rabotniki WHERE login='".($_POST['login'])."' LIMIT 1"));
@@ -56,7 +56,7 @@ if($data['pass'] === $_POST['password'])
 	{
 	echo '<div style="text-align: center;">Ошибка ввода логин-пароль</div>';
 
-	echo '<div style="text-align: center;"><a href="public/login.html">еще раз</a></div>';
+	echo '<div style="text-align: center;"><a href="/public/login.html">еще раз</a></div>';
 
 	mysqli_query($db,"INSERT INTO `login`(`date`, `login`,`info`,`ok`) VALUES ('$time','$login','$all','no')");
 	exit();

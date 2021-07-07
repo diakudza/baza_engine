@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $result = mysqli_query($db,"SELECT rabotniki.Tabel,rabotniki.Fio,rabotniki.id_rabotnika,rabotniki.professia,rabotniki.data_ustr,rabotniki.status,rabotniki.dop3,rabotniki.login,rabotniki.pass,rabotniki.chatid,foto.bindata,foto.idimg,rabotniki.Foto,rabotniki.smena from rabotniki LEFT JOIN foto ON rabotniki.Foto=foto.idimg WHERE id_rabotnika='".$_GET["id_rabotnika"]."'") or die("<br>не могу.");//ORDER by ".$_GET["orderby"]."";
 ?>
 

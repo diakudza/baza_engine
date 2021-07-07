@@ -10,7 +10,7 @@ exit;}
 
 
 <?PHP
-include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $id = $_POST['id'];
 $nomerdetali = $_POST['nomerdetali'];
 

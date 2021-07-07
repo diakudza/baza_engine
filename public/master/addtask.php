@@ -1,7 +1,7 @@
 <?PHP
 session_start();
 error_reporting(0); 
-//include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $data1 = date("d.m.Y");
 //print_r ($_POST);
 $d=mysqli_query($db,"SELECT id_machine,name FROM `machine`")or die(mysqli_error());

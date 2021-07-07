@@ -2,7 +2,7 @@
 session_start();
 
 error_reporting(0); 
-include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $ProgH1Name = $_POST['ProgH1Name'];
 $ProgH2Name = $_POST['ProgH2Name'];
 $stanok = $_POST['Stanok'];
@@ -15,12 +15,10 @@ $head1ch = htmlspecialchars($_POST['head1ch']);
 $head2ch = htmlspecialchars($_POST['head2ch']);
 mysqli_close($db);
 
-
 $ftp = ftp_connect("10.110.140.34", "21", "30"); 
 $login = ftp_login($ftp, "star", "star"); 
 if (!$login) exit("<br><w>Ошибка подключения");
 ftp_chdir($ftp, $sql['dop2']); // Заходим в директорию станка
-
 
 		if ( $head1ch == '1')
 		{

@@ -1,6 +1,8 @@
 <?PHP
 session_start();
-//include($_SERVER['DOCUMENT_ROOT'].'config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect2.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/engine/func.php');
 
 
 $machine = mysqli_query($db,"SELECT * from machine ORDER BY `machine`.`name` ASC");
@@ -11,7 +13,7 @@ $now=mysqli_fetch_array($fio);
 
 <?php
 if(isset($_POST['button'])){
-    $start=$_POST['start'];
+	$start=$_POST['start'];
     $end=$_POST['end'];
     $stanki='';
     $activ=$_POST['activ'];
@@ -33,15 +35,18 @@ if(isset($_POST['button'])){
     {
         mysqli_query($db,"UPDATE events SET `stanki`='$stanki',`start`='$start',`end`='$end',`activ`='$activ' WHERE `id_rabotnika`='".$_SESSION['userid']."' ");
         echo "<br><w>Уведомления изменены";
+        addUserAction($_SESSION['login'],"Уведомления изменены"); 
     }
     else
     {	$id_rabotnika=$_SESSION['userid'];
         mysqli_query($db,"INSERT INTO events (`id_rabotnika`,`stanki`,`start`,`end`,`activ`) VALUES('$id_rabotnika','$stanki','$start','$end','$activ')");
         echo "<br><w>Уведомления добавлены";
+        addUserAction($_SESSION['login'],"Уведомления добавлены");
     }
 }
+
 ?>
-<form action="?" method="POST" id="events" >
+<form action="index.php?page=events" method="POST" id="events" >
         <table width="50%" height="195" border="1" align="center" class="window">
           <tr>
 			  <td>Актуальные станки для <?php echo $_SESSION['fio'];?>:
@@ -88,24 +93,24 @@ if(isset($_POST['button'])){
 
 @Star_events_bot
 <script>
-		$(document).ready(function(){  
+		// $(document).ready(function(){  
           
-            $('#events').submit(function(){  
-				var msg   = $('#events').serialize();
-                $.ajax({  
-                    type: "POST",  
-                    url: "events.php",
-                    data: msg, 
-					cache:false,
-					//contentType: false,
-					 //processData: false, 
-                     success: function(html){  
+  //           $('#events').submit(function(){  
+		// 		var msg   = $('#events').serialize();
+  //               $.ajax({  
+  //                   type: "POST",  
+  //                   url: "public/events.php",
+  //                   data: msg, 
+		// 			cache:false,
+		// 			//contentType: false,
+		// 			 //processData: false, 
+  //                    success: function(html){  
 						
-                        $("#content").html("<w>  Добавлено</w>");
-                    }  
-                });  
-                return false;  
-            });  
+  //                       $("#content").html("<w>  Добавлено</w>");
+  //                   }  
+  //               });  
+  //               return false;  
+  //           });  
               
-        });  
+  //       });  
 	</script>

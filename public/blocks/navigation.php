@@ -33,7 +33,7 @@ $drop='<div class="drop btn-secondary btn-sm">
 					
 				<?php 
 				if($_SESSION['ad']=='1')//adm
-					{ echo $home,$find,$new,$msg,$newtask,$ptask,$users,$events,$operators; }
+					{ echo $home,$find,$new,$msg,$newtask,$ptask,$users,$events,$operators,$log; }
 				if($_SESSION['ad']=='2')//master
 					{ echo $home,$find,$msg,$newtask,$ptask,$operators; }	
 				if($_SESSION['ad']=='')//other

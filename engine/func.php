@@ -4,7 +4,7 @@
 function selecttip()
 {
     global $db;
-$query = "SELECT * from tip_detali ORDER BY `tip_detali`.`TypeDetail` ASC";
+    $query = "SELECT * from tip_detali ORDER BY `tip_detali`.`TypeDetail` ASC";
 
     $result = mysqli_query($db, $query) or die("<br>Не могу выполнить запрос");
     return $result;
@@ -36,5 +36,15 @@ $query = "SELECT * from machine ORDER BY `machine`.`name` ASC";
 $result = mysqli_query($db,$query) or die("<br>Не могу выполнить запрос");
 
    return $result;
+}
+
+function addUserAction ($login,$action) {
+    global $db;
+
+// echo '<br>'.$login;
+// echo '<br>'.$action; 
+$time = date("Y.m.d H:i:s");
+$sql="INSERT INTO login (`date`,`login`,`info`) VALUES('$time', '$login','$action')";
+$result = mysqli_query($db, $sql) or die("<br>Не могу выполнить запрос");
 }
 ?>

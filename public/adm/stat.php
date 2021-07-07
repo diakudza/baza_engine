@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-include "../config/connect.php";
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 ?>
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

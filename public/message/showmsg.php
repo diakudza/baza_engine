@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $result = mysqli_query($db,"SELECT mesg.idmessage,mesg.message,mesg.id_rabotnika,mesg.date,mesg.id_stanka,machine.name,rabotniki.fio FROM mesg LEFT JOIN machine ON mesg.id_stanka=machine.id_machine LEFT JOIN rabotniki ON mesg.id_rabotnika=rabotniki.id_rabotnika")or die(mysqli_error());
 ?>
 

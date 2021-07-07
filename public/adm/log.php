@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-include "../config/connect.php";
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 ?>
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,9 +18,9 @@ foreach($result as $row)
 echo '
 <tr>
 <td>'.$row["date"].'</td>
-<td>логин:'.$row["login"].'</td>
-<td width="60%">инфо:'.$row["info"].'</td>
-<td>статус:'.$row["ok"].'</td>
+<td>'.$row["login"].'</td>
+<td width="60%">'.$row["info"].'</td>
+<td>'.$row["ok"].'</td>
 </tr>'; 
 }
       

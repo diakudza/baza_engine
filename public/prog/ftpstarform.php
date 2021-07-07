@@ -3,7 +3,8 @@ session_start();
 $ProgH1Name = $_GET['ProgH1Name'];
 $ProgH2Name = $_GET['ProgH2Name'];
 $id = htmlspecialchars($_GET['id']);
-
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/engine/func.php');
 ?>
 
 <form id="ftp" enctype="multipart/form-data">

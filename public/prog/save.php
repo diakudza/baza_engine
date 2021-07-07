@@ -1,7 +1,6 @@
 <?PHP
 session_start();
-$path = $_SERVER['DOCUMENT_ROOT']."/config/connect.php";
-include($path);	
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $dir=$_SERVER['DOCUMENT_ROOT'];
 $id = htmlspecialchars($_GET['id']);
 $row = mysqli_fetch_array(mysqli_query($db,"SELECT ProgH1Name,ProgH2Name,Head1,Head2 FROM starprogramms WHERE id='".$id."'" ))or die(mysqli_error());

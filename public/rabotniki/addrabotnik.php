@@ -4,7 +4,7 @@ session_start();
 
 
 <?php
-//include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $data = date("d.m.Y");
 if ($_FILES['foto']['size']>0)
 { echo "Есть";

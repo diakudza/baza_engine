@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-//include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 error_reporting(0);
 $idrab = $_SESSION['userid'];
 $time = date("d/m/y H:i");

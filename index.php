@@ -9,10 +9,9 @@ header("Location: /public/login.html");
 exit;
 }
 allok:
-//require('config/config.php');
-require('config/connect.php');
-//require_once ('config/connect2.php');
-require('engine/func.php');
+include_once('config/connect.php');
+include_once('engine/func.php');
+
 ?>
 
 <html>
@@ -26,12 +25,9 @@ require('engine/func.php');
 </head>
 <body>
 
-
 	<div id="container">
-	
-	
-	
-		<div class="nav navbar-dark sticky-top">
+			
+		<div class="nav navbar-dark sticky-top" style="background-color: #333;">
 		<?php include ("public/blocks/navigation.php");?>
 		</div>
         <div id="content">

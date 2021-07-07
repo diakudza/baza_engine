@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 $id = htmlspecialchars($_GET['id']);
 $row = mysqli_fetch_array(mysqli_query($db,"SELECT starprogramms.id,img.idimg,img.bindata,starprogramms.nomerdetali,starprogramms.TypeMaterial, tip_detali.TypeDetail,rabotniki.fio,machine.name,starprogramms.Img,starprogramms.DiametrZagotovki,tip_detali.TypeDetail,rabotniki.Fio, material.tip,starprogramms.ProgH1Name,starprogramms.ProgH2Name,starprogramms.Head1,starprogramms.Head2,starprogramms.Opisanie, starprogramms.Date_time FROM starprogramms LEFT JOIN machine ON starprogramms.stanok=machine.id_machine LEFT JOIN tip_detali ON starprogramms.TypeDetail=tip_detali.id LEFT JOIN material ON starprogramms.Material=material.idmaterial LEFT JOIN rabotniki ON starprogramms.Dobavil=rabotniki.id_rabotnika LEFT JOIN img ON starprogramms.img=img.idimg WHERE starprogramms.id='".$id."'" ))or die(mysqli_error());
 

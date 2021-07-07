@@ -1,8 +1,8 @@
 <?PHP
 session_start();
 //var_dump ($_POST);
-include($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+//include($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 
 if (isset($_POST['nomerdetali'])) {
 }

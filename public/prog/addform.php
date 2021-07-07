@@ -6,9 +6,10 @@ session_start();
 <body>
 <p>
   <?PHP
+ include_once($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
 //  error_reporting(0); 
-$path = $_SERVER['DOCUMENT_ROOT']."/config/connect.php";
-//include($path);
+include_once($_SERVER['DOCUMENT_ROOT'].'/engine/func.php');
+
 
 $nomerdetali = $_POST["nomerdetali"];
 $Stanok = $_POST['Stanok'];
@@ -93,6 +94,7 @@ $id1=$id1[0]+1;
 $sql="INSERT INTO starprogramms (id,nomerdetali,Stanok,Dobavil,TypeDetail,TypeMaterial,Opisanie,ProgH1Name,ProgH2Name,Head1,Head2,Img,DiametrZagotovki,Material,Date_time) VALUES('$id1','$nomerdetali', '$Stanok', '$Dobavil', '$TypeDetail', '$TypeMaterial', '$Opisanie', '$ProgH1Name', '$ProgH2Name', '$Head1', '$Head2', '$idimg', '$DiametrZagotovki', '$Material', '$data1')";
 
 mysqli_query ($db,$sql) or die (mysqli_error());
+addUserAction($_SESSION['login'],"Добавил деталь"); 
 echo "<br><w>Добавлена деталь номер:  ".$_POST["nomerdetali"]; 
 mysqli_close($db);
 ?>
