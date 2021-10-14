@@ -1,11 +1,12 @@
 <?PHP
-session_start();
-include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/public/func.php');
+//session_start();
+//include($_SERVER['DOCUMENT_ROOT'] . '/config/connect.php');
+//nclude($_SERVER['DOCUMENT_ROOT'] . '/public/func.php');
 if(($_SESSION['ad']!='1')&&($_SESSION['fio']!=$_GET['Dobavil']))
 {echo "<w>У ".$_SESSION['fio']." нет прав на эту операцию ".$_SESSION['ad']."</w>";
 
 exit;}
+var_dump($_SERVER['REQUEST_URI']);
 $id = htmlspecialchars($_GET['id']);
 $query = mysqli_query($db,"SELECT starprogramms.id,img.idimg,img.bindata,starprogramms.nomerdetali,starprogramms.TypeMaterial, tip_detali.TypeDetail,rabotniki.fio,machine.name,starprogramms.Img,starprogramms.DiametrZagotovki,tip_detali.id as id_detali,rabotniki.Fio, material.tip,starprogramms.ProgH1Name,starprogramms.ProgH2Name,starprogramms.Head1,starprogramms.Head2,starprogramms.Opisanie, starprogramms.Date_time FROM starprogramms LEFT JOIN machine ON starprogramms.stanok=machine.id_machine LEFT JOIN tip_detali ON starprogramms.TypeDetail=tip_detali.id LEFT JOIN material ON starprogramms.Material=material.idmaterial LEFT JOIN rabotniki ON starprogramms.Dobavil=rabotniki.id_rabotnika  LEFT JOIN img ON starprogramms.img=img.idimg WHERE starprogramms.id='".$id."'" )or die(mysqli_error());
 $row = mysqli_fetch_array($query)or die(mysqli_error());
@@ -55,7 +56,7 @@ mysqli_close($db); ?>
  
 
 </form>
-<script>
+<!-- <script>
 		$(document).ready(function(){  
 			var content = document.getElementById("content");
 			
@@ -85,4 +86,4 @@ mysqli_close($db); ?>
             });  
               
         
-	</script>
+	</script> -->

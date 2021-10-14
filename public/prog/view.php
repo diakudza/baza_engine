@@ -11,9 +11,11 @@ mysqli_close($db);
 	<input type="hidden" name="id" id="<?PHP echo $id;?>" />
 		<div class="view-left border">
 			<div style="width:80%;" >
-			<?php echo "<br>id:",$row['id'];?>
-				<?php echo "<br>Номер детали: ",$row['nomerdetali'];?>
-				<?php echo "<br>Тип детали: ",$row['TypeDetail'];?>
+				<?php 
+					echo "<br>id:",$row['id'];
+					echo "<br>Номер детали: ",$row['nomerdetali'];
+					echo "<br>Тип детали: ",$row['TypeDetail'];
+				?>
 			</div>
 			<img src="<?php echo 'data:image/jpeg;base64,',base64_encode($row['bindata']);?>" style="margin-top:25px; border-radius: 5px; width:90%;">
 			<div style="width:80%;" >
@@ -22,7 +24,7 @@ mysqli_close($db);
 				<input type="radio" name="RG1" value="ost" id="RadioGroup1_3" />ОСТ
 				<input type="radio" name="RG1" value="tip" id="RadioGroup1_6" />Типовая-->
 				
-				<?php echo "<br>Добовил: ",$row['fio'];?>
+				<?php echo "<br>Добавил: ",$row['fio'];?>
 				<?php echo "<br>Станок: ",$row['name'];?>
 				<?php echo "Материал<br>Сплав:",$row['tip'];?>
 				<?php echo " ",$row['DiametrZagotovki']," ",$row['TypeMaterial'];?>				  				  
@@ -31,8 +33,8 @@ mysqli_close($db);
 			<textarea name="Opisanie" style="width:90%;" cols="40" rows="7" id="textfield6"><?php echo $row['Opisanie'];?></textarea>
 			
 			<div class="view-button">
-				   <button id="btnsave" class="btn btn-sm btn-secondary" ><w>Save</button>                              
-				   <button id="btnedit" class="btn btn-sm btn-secondary" ><w>EDIT</button>                              
+				   <a href="/edit?id=<?PHP echo $id;?>&Dobavil=<?PHP echo $row['fio'];?>" class="btn btn-sm btn-secondary" ><w>EDIT</a>                              
+				   <button id="btnedit" class="btn btn-sm btn-secondary" ><w>SAVE</button>                              
 				   <button id="btnftp" class="btn btn-sm btn-secondary" ><w>FTP</button>                              
 				   <button id="btndel" class="btn btn-sm btn-danger"><w>Del</button>                              
 			</div>                           
@@ -56,7 +58,7 @@ mysqli_close($db);
 	
    </div>
    	
- <script>
+<!--  <script>
 $(document).ready(function()
 		{
 			var id ='<?PHP echo $id;?>';
@@ -138,5 +140,5 @@ $(document).ready(function()
 		
 			
 		});
-</script>      
+</script>       -->
 

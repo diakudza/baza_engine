@@ -4,7 +4,7 @@ define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
 define('DB', 'ceh2');
-
+define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 define('SITE_ROOT', "../");
 define('WWW_ROOT', SITE_ROOT . '/public');
 define('DOMAIN','http://baza.ru/');

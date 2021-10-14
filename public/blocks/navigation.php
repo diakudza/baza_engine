@@ -2,17 +2,17 @@
 $row = mysqli_query($db,"SELECT starprogramms.Dobavil,rabotniki.Fio,rabotniki.id_rabotnika,rabotniki.foto FROM starprogramms LEFT JOIN rabotniki ON starprogramms.Dobavil=rabotniki.id_rabotnika LEFT JOIN foto ON rabotniki.foto=foto.idimg WHERE starprogramms.Dobavil='".$_SESSION['userid']."'");
 $nam=mysqli_num_rows($row);
 $foto=mysqli_fetch_array(mysqli_query($db,"SELECT rabotniki.id_rabotnika,rabotniki.foto,foto.bindata FROM rabotniki LEFT JOIN foto ON rabotniki.foto=foto.idimg WHERE rabotniki.id_rabotnika='".$_SESSION['userid']."'"));
-$home='<a href="index.php?page=main" id="btnmain" class="btn btn-primary btn-sm">Главная</a>';
-$find='<a href="index.php?page=find" id="btnfind" class="btn btn-secondary btn-sm"><w>Поиск</a>';
-$new='<a  href="index.php?page=form" id="btnnew" class="btn btn-secondary btn-sm"><w>Добавить</a>';
-$msg='<a  href="index.php?page=msg" id="btnmsg" class="btn btn-secondary btn-sm" ><w>Сообщения</a>';
-$newtask='<a href="index.php?page=newtask"  id="btnnewtask" class="btn btn-secondary btn-sm"><w>Добавить задания</a>';
-$ptask='<a href="index.php?page=ptask" id="btnptask" class="btn btn-secondary btn-sm" ><w>Задания</a>';
-$users='<a href="index.php?page=users" id="btnusers" class="btn btn-secondary btn-sm"><w>Пользователи</a>';
-$log='<a href="index.php?page=log" id="btnlog" class="btn btn-secondary btn-sm"><w>log</a>';
-$operators='<a href="index.php?page=operators" id="btn_operators" class="btn btn-secondary btn-sm"><w>Операторы</a>';
-$events='<a href="index.php?page=events" id="btnevents" class="btn btn-secondary btn-sm" ><w>Уведомления</a>';
-$stanki='<a href="index.php?page=stanki" id="btnstanki" class="btn btn-secondary btn-sm"  ><w>Cтанки</a>';
+$home='<a href="/main" id="btnmain" class="btn btn-primary btn-sm">Главная</a>';
+$find='<a href="/find" id="btnfind" class="btn btn-secondary btn-sm"><w>Поиск</a>';
+$new='<a  href="/form" id="btnnew" class="btn btn-secondary btn-sm"><w>Добавить</a>';
+$msg='<a  href="/msg" id="btnmsg" class="btn btn-secondary btn-sm" ><w>Сообщения</a>';
+$newtask='<a href="/newtask"  id="btnnewtask" class="btn btn-secondary btn-sm"><w>Добавить задания</a>';
+$ptask='<a href="/ptask" id="btnptask" class="btn btn-secondary btn-sm" ><w>Задания</a>';
+$users='<a href="/users" id="btnusers" class="btn btn-secondary btn-sm"><w>Пользователи</a>';
+$log='<a href="/log" id="btnlog" class="btn btn-secondary btn-sm"><w>log</a>';
+$operators='<a href="/operators" id="btn_operators" class="btn btn-secondary btn-sm"><w>Операторы</a>';
+$events='<a href="/events" id="btnevents" class="btn btn-secondary btn-sm" ><w>Уведомления</a>';
+$stanki='<a href="/stanki" id="btnstanki" class="btn btn-secondary btn-sm"  ><w>Cтанки</a>';
 
 $drop='<div class="drop btn-secondary btn-sm">
 		<button class="btn btn-secondary btn-sm"><w>Menu</button>

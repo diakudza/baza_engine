@@ -47,4 +47,9 @@ $time = date("Y.m.d H:i:s");
 $sql="INSERT INTO login (`date`,`login`,`info`) VALUES('$time', '$login','$action')";
 $result = mysqli_query($db, $sql) or die("<br>Не могу выполнить запрос");
 }
+
+function template ($page) {
+    require ($_SERVER['DOCUMENT_ROOT'].'/public/blocks/'.$page.'.php');
+}
+
 ?>

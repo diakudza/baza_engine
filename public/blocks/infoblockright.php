@@ -11,10 +11,10 @@ $row = mysqli_query($db,"SELECT starprogramms.id,starprogramms.Date_time,starpro
 		<br>Колличество программ в базе: <p style="color:#1d9de5";><?php echo $nam; ?></p>
 		<br>Три последних добавленных: 
 		<?php foreach ($row as $row1) {
-		echo '<br><p id="'.$row1["id"].'" style="color:#1d9de5"; onClick="check(this.id)">'.$row1["Date_time"].' '.$row1["nomerdetali"].' '.$row1["Fio"].'</p>'; } ?>
+		echo '<br><a href="/view?id='.$row1["id"].'"><p id="'.$row1["id"].'" style="color:#1d9de5";">'.$row1["Date_time"].' '.$row1["nomerdetali"].' '.$row1["Fio"].'</p></a>'; } ?>
 </h6>
 
-<script>
+<!-- <script>
 							
 		function check(clicked) {
 						var content = document.getElementById("content");
@@ -36,6 +36,6 @@ $row = mysqli_query($db,"SELECT starprogramms.id,starprogramms.Date_time,starpro
 				
 				}		
 					
-	</script>     
+	</script>      -->
 	
 </div>	

@@ -11,7 +11,6 @@ exit;
 allok:
 include_once('config/connect.php');
 include_once('engine/func.php');
-
 ?>
 
 <html>
@@ -32,45 +31,61 @@ include_once('engine/func.php');
 		</div>
         <div id="content">
         <?php
-        if(!isset($_GET['page'])){
-            require ($_SERVER['DOCUMENT_ROOT']."/public/blocks/main.php");
+        // var_dump($_SERVER['REQUEST_URI']);
+
+        if(!isset($_SERVER['REQUEST_URI'])){
+            require (ROOT ."/public/blocks/main.php");
         }else{
+           
+        $page = $_SERVER['REQUEST_URI'];
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        var_dump($uri);
 
-        $page = $_GET['page'];
+        switch ($uri) {
+            case '/main':
+                require (ROOT.'/public/blocks/main.php');
+                break;
+            case '/find':
+                require(ROOT . '/public/prog/form_filtr_prog.php');
+                break;
 
-        switch ($page) {
-            case 'main':
-                require ($_SERVER['DOCUMENT_ROOT'].'/public/blocks/main.php');
+            case '/find_ok':
+                require(ROOT . '/public/prog/filtr_prog.php');
+                break;    
+
+            case '/edit':
+                require(ROOT . '/public/prog/edprog.php');
                 break;
-            case 'find':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/prog/form_filtr_prog.php');
+
+            case '/form':
+                require(ROOT . '/public/prog/form.php');
                 break;
-            case 'form':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/prog/form.php');
+            case '/msg':
+                require (ROOT.'/public/message/message.php');
                 break;
-            case 'msg':
-                require ($_SERVER['DOCUMENT_ROOT'].'/public/message/message.php');
+            case '/view':
+                require (ROOT.'/public/prog/view.php');
+                break;    
+            case '/newtask':
+                require(ROOT. '/public/master/task.php');
                 break;
-            case 'newtask':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/master/task.php');
+            case '/ptask':
+                require(ROOT . '/public/master/pstanki.php');
                 break;
-            case 'ptask':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/master/pstanki.php');
+            case '/log':
+                require (ROOT .'/public/adm/log.php');
                 break;
-            case 'log':
-                require ($_SERVER['DOCUMENT_ROOT'].'/public/adm/log.php');
+            case '/users':
+                require(ROOT . '/public/rabotniki/rabotniki.php');
                 break;
-            case 'users':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/rabotniki/rabotniki.php');
+            case '/operators':
+                require(ROOT . '/public/master/operators.php');
                 break;
-            case 'operators':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/master/operators.php');
+            case '/events':
+                require (ROOT .'/public/events.php');
                 break;
-            case 'events':
-                require ($_SERVER['DOCUMENT_ROOT'].'/public/events.php');
-                break;
-            case 'stanki':
-                require($_SERVER['DOCUMENT_ROOT'] . '/public/test/info_sq.html');
+            case '/stanki':
+                require(ROOT . '/public/test/info_sq.html');
                 break;
         }
         }
@@ -81,9 +96,5 @@ include_once('engine/func.php');
 	<div class="fixed-bottom">
 		<?php include("public/blocks/footer.php");?>
 	</div>
-	
-	
-
-
 </body>
 </html>
