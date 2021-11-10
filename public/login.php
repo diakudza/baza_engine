@@ -49,7 +49,8 @@ if($data['pass'] === $_POST['password'])
 		echo "Здравствуйте, ".$_SESSION['fio']."";
 
 		mysqli_query($db,"INSERT INTO `login`(`date`, `login`,`info`,`ok`) VALUES ('$time','$login','$all','ok')");
-	echo '<meta http-equiv="refresh" content="1; URL=/index.php" />';
+	echo '<meta http-equiv="refresh" content="1; URL=/main" />';
+	//echo '<meta http-equiv="refresh" content="1; URL=/index.php" />';
 
 	}
 	else
